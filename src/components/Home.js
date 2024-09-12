@@ -1,14 +1,14 @@
 import React from 'react'
 import Carousel from './Carousel'
-import CarouselTwo from './CarouselTwo'
+
 
 const Home = () => {
   return (
     <div className='Home'>
         <Carousel />
-        <CarouselTwo />
+        <h1>Rohit Phulambrikar</h1>
     </div>
   )
 }
 
-export default Home
+export default Home 

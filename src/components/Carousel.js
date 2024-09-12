@@ -62,7 +62,7 @@ const Carousel = () => {
                     </div>
                 ))}
             </div>
-            <button className="carousel-button prev" onClick={() => moveSlide(-1)}>&#10094;</button>
+            {/* <button className="carousel-button prev" onClick={() => moveSlide(-1)}>&#10094;</button> */}
             <button className="carousel-button next" onClick={() => moveSlide(1)}>&#10095;</button>
         </div>
     );

@@ -1,6 +1,6 @@
 .Home{
     display: flex;
-    justify-content : start;
+    justify-content : space-between;
     flex-wrap: wrap;
     flex-direction: row;
 }
