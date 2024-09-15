@@ -11,6 +11,14 @@ const Navbar = () => {
     navigate('login');
   }
 
+  const handleCart = () => {
+    navigate('cart');
+  }
+
+  const handleOrder = () => {
+    navigate('order');
+  }
+
 
   return (
     <div className="navbar">
@@ -20,9 +28,9 @@ const Navbar = () => {
       <button className="navbarButton"><i className="fas fa-map-marker-alt"></i> Change Location</button>
       <input placeholder='Search for products' />
       <button className="navbarButton"><i className="fas fa-globe"></i> EN</button>
-      <button className="navbarButton"><i className="fas fa-user" onClick={handleLogin}></i> Login</button>
-      <button className="navbarButton"><i className="fas fa-receipt"></i> Returns and Orders</button>
-      <button className="navbarButton"><i className="fas fa-shopping-cart"></i> Cart</button>
+      <button className="navbarButton" onClick={handleLogin}><i className="fas fa-user" ></i> Login</button>
+      <button className="navbarButton" onClick={handleOrder}><i className="fas fa-receipt"></i> Returns and Orders</button>
+      <button className="navbarButton" onClick={handleCart}><i className="fas fa-shopping-cart"></i> Cart</button>
     </div>
     
     

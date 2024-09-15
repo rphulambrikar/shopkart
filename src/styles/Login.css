@@ -1,4 +1,4 @@
-/* Basic reset for the page */
+
 body, html {
     margin: 0;
     padding: 0;
@@ -6,7 +6,7 @@ body, html {
     height: 100%;
   }
   
-  /* Flexbox container to center content */
+
   .login-container {
     display: flex;
     justify-content: center;
@@ -14,7 +14,7 @@ body, html {
     height: 100vh;
   }
   
-  /* Style for the login card */
+ 
   .login-card {
     background-color: #fff;
     padding: 20px;
@@ -22,8 +22,9 @@ body, html {
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 100%;
-    max-width: 360px; /* Responsive width */
+    max-width: 360px; 
     box-sizing: border-box;
+    height: 50%;
   }
   
   .login-card h1 {
@@ -31,10 +32,10 @@ body, html {
     margin-bottom: 20px;
     font-size: 24px;
     font-weight: 700;
-    color: #111; /* Darker text color */
+    color: #111; 
   }
   
-  /* Form elements */
+
   form label {
     display: block;
     margin-bottom: 5px;
@@ -56,17 +57,17 @@ body, html {
     padding: 10px;
     border: none;
     border-radius: 4px;
-    background-color: #f0c14b; /* Amazon yellow */
+    background-color: #f0c14b; 
     color: #111;
     font-size: 16px;
     cursor: pointer;
   }
   
   form button:hover {
-    background-color: #e7a71a; /* Darker yellow on hover */
+    background-color: #e7a71a; 
   }
   
-  /* Links section */
+
   .links {
     text-align: center;
     margin-top: 15px;
@@ -75,7 +76,7 @@ body, html {
   .links a {
     display: block;
     margin-bottom: 10px;
-    color: #0066c0; /* Amazon blue */
+    color: #0066c0; 
     text-decoration: none;
   }
   
@@ -83,7 +84,7 @@ body, html {
     text-decoration: underline;
   }
   
-  /* Responsive design adjustments */
+
   @media (max-width: 480px) {
     .login-card {
       padding: 15px;
