@@ -1,10 +1,28 @@
-import React from 'react';
+import React, {useState} from 'react';
 import "../styles/Payment.css";
+import { useNavigate } from 'react-router-dom';
+import {users} from "../UserData/User";
 
 const Payment = () => {
   // Retrieve cart items and total price from session storage
   const cartItems = JSON.parse(sessionStorage.getItem('cartItems')) || [];
   const totalPrice = sessionStorage.getItem('totalPrice') || '0.00';
+  const [cardNumber, setCardNumber] = useState('');
+  const [expiryDate, setExpiryDate] = useState('');
+  const [cvv, setCvv] = useState('');
+  const navigate = useNavigate();
+
+  const handlePayment = (e) => {
+    e.preventDefault();
+    const user = users.find(u => u.cardDetails.cardNumber === cardNumber && 
+                                  u.cardDetails.expiryDate === expiryDate && 
+                                  u.cardDetails.cvv === cvv);
+    if (user) {
+      navigate('/order');
+    } else {
+      alert('Invalid card details');
+    }
+  };
 
   // Generate order summary
   const orderSummary = cartItems.map(item => (
@@ -29,18 +47,16 @@ const Payment = () => {
 
         <section className="payment-details">
           <h2>Payment Information</h2>
-          <form>
-            <label htmlFor="name">Name on Card</label>
-            <input type="text" id="name" name="name" required />
+          <form onSubmit={handlePayment}>
 
             <label htmlFor="card-number">Card Number</label>
-            <input type="text" id="card-number" name="card-number" required />
+            <input type="text" value={cardNumber} onChange={e => setCardNumber(e.target.value)} placeholder="Card Number" required />
 
             <label htmlFor="expiry-date">Expiry Date</label>
-            <input type="text" id="expiry-date" name="expiry-date" placeholder="MM/YY" required />
+            <input type="text" value={expiryDate} onChange={e => setExpiryDate(e.target.value)} placeholder="Expiry Date" required />
 
             <label htmlFor="cvv">CVV</label>
-            <input type="text" id="cvv" name="cvv" required />
+            <input type="text" value={cvv} onChange={e => setCvv(e.target.value)} placeholder="CVV" required />
 
             <button type="submit">Pay Now</button>
           </form>

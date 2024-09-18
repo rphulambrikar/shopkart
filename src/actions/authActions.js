@@ -1,4 +1,4 @@
-// src/actions.js
+
 export const login = () => ({
     type: 'LOGIN',
   });

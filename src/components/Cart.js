@@ -89,7 +89,7 @@ const Cart = () => {
       </div>
       <div className="cartSummary cartItem">
         <h2>Total Price: ${calculateTotalPrice()}</h2>
-        <button onClick={handleCheckout}>Proceed to Payment</button>
+        <button className="checkoutButton" onClick={handleCheckout}>Proceed to Payment</button>
       </div>
     </div>
   );
