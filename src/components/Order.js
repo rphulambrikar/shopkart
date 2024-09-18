@@ -1,54 +1,48 @@
-import React from 'react'
-import "../styles/Order.css"
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import "../styles/Order.css";
 
 const Order = () => {
+  // Retrieve cart items and total price from session storage
+  const cartItems = JSON.parse(sessionStorage.getItem('cartItems')) || [];
+  const totalPrice = parseFloat(sessionStorage.getItem('totalPrice')) || 0;
+  
+  const shippingCost = 5.00;
+  const finalTotal = (totalPrice + shippingCost).toFixed(2);
+  
+  const navigate = useNavigate();
+
+  const handleGoBack = () => {
+    // Navigate back to the cart or home page
+    navigate('/');
+  };
+
   return (
-    <div class="container">
-        <header>
-            <h1>Order History</h1>
-        </header>
-        
-        <main>
-            <section class="order-history">
-                <h2>Your Orders</h2>
-                
-                <div class="order-card">
-                    <div class="order-header">
-                        <span class="order-id">Order #123456</span>
-                        <span class="order-date">September 15, 2024</span>
-                    </div>
-                    <div class="order-items">
-                        <div class="item">
-                            <img src="item1.jpg" alt="Item 1" />
-                            <div class="item-details">
-                                <h3>Item 1 Name</h3>
-                                <p>Quantity: 2</p>
-                                <p>Price: $20.00</p>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <img src="item2.jpg" alt="Item 2" />
-                            <div class="item-details">
-                                <h3>Item 2 Name</h3>
-                                <p>Quantity: 1</p>
-                                <p>Price: $35.00</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="order-footer">
-                        <span class="total">Total: $75.00</span>
-                        <button class="view-details">View Details</button>
-                    </div>
-                </div>
-                
-            </section>
-        </main>
+    <div className="orderContainer">
+      <header>
+        <h1>Order Confirmation</h1>
+      </header>
+      
+      <section className="orderSummary">
+        <h2>Your Order Summary</h2>
+        <ul>
+          {cartItems.map(item => (
+            <li key={item.id}>
+              {item.title} - ${(item.price || 0).toFixed(2)} x {item.quantity} = ${(item.price * item.quantity).toFixed(2)}
+            </li>
+          ))}
+          <li>Shipping - ${shippingCost.toFixed(2)}</li>
+          <li><strong>Total - ${finalTotal}</strong></li>
+        </ul>
+      </section>
 
-        <footer>
-            <p>&copy; 2024 Your Company Name</p>
-        </footer>
+      <button className="goBackButton" onClick={handleGoBack}>Go Back to Shopping</button>
+
+      <footer>
+        <p>&copy; 2024 Your Company Name</p>
+      </footer>
     </div>
-  )
-}
+  );
+};
 
-export default Order
+export default Order;
