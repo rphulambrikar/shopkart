@@ -11,6 +11,7 @@ import Footer from "./components/Footer"
 import Home from "./components/Home"
 import "./App.css"
 import authReducer from './store'; // Import your reducer
+import SignUp from './components/SignUp';
 
 const App = () => (
   <div className='main'>
@@ -18,7 +19,7 @@ const App = () => (
     <Navbar />
     <Routes>
     <Route path="/login" element={<Login />} />
-    <Route path="/login" element={<Login />} />
+    <Route path="/signup" element={<SignUp />} />
           <Route path="/" element={<ProtectedRoute element={<Home />} />} />
           <Route path="/payment" element={<ProtectedRoute element={<Payment/>} />} />
           <Route path="/order" element={<ProtectedRoute element={<Order />} />} />

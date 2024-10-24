@@ -45,8 +45,8 @@ const Login = () => {
             <button type="submit">Sign-In</button>
 
             <div class="links">
-                <a href="#">Forgot your password?</a>
-                <a href="#">Create your Amazon account</a>
+                <button>Forgot your password?</button>
+                <button onClick={() => navigate("/signup")}>Create your Amazon account</button>
             </div>
         </form>
     </div>
