@@ -63,15 +63,18 @@ const Cart = () => {
 
   return (
     <div className="cartContainer">
-      <h1>Cart</h1>
+      
       <div className="cartItems">
+      <h1>Cart</h1>
         {cartItems.length === 0 ? (
           <div className='cartItem'>
+            
             <p>No items in the cart.</p>
           </div>
         ) : (
           cartItems.map((item) => (
             <div key={item.id} className="cartItem">
+              
               <img src={item.image} alt={item.title} className="cartItemImage" />
               <div className="cartItemDetails">
                 <h3>{item.title}</h3>

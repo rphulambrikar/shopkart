@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
 import '../styles/Signup.css';
+import { Button } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 
 const SignUp = () => {
+
+    const navigate = useNavigate();
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -42,7 +46,9 @@ const SignUp = () => {
                 </div>
                 <button type="submit" className="btn">Create your Amazon account</button>
             </form>
-            <p className="footer-text">Already have an account? <a href="#">Sign in</a></p>
+            <p className="footer-text">Already have an account? <Button onClick={() => {
+                navigate("/login")
+            }}>Sign In</Button></p>
         </div>
     );
 };
