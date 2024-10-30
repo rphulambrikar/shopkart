@@ -4,9 +4,8 @@
     padding: 20px 0;
     text-align: center;
     position: relative;
-    bottom : 0%;
-    width : 100vw;
-    
+    bottom: 0;
+    width: 100%;
 }
 
 .footer-container {
@@ -17,9 +16,10 @@
 }
 
 .footer-section {
-    flex: 1;
+    flex: 1 1 250px; /* Set a minimum width */
     margin: 10px;
     max-width: 300px;
+    text-align: left; /* Align text to the left */
 }
 
 .footer-section h3 {
@@ -61,4 +61,17 @@
 
 .footer-bottom p {
     margin: 0;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column; /* Stack sections on small screens */
+        align-items: center; /* Center align sections */
+    }
+    
+    .footer-section {
+        max-width: 100%; /* Allow sections to take full width */
+        text-align: center; /* Center align text */
+    }
 }

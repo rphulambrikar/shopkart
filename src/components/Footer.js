@@ -10,7 +10,7 @@ const Footer = () => {
           <p>
             Make Money with Us <br></br> Sell on Amazon<br></br>  Sell under Amazon Accelerator<br></br> 
             Protect and Build Your Brand<br></br>  Amazon Global Selling<br></br>  Supply to Amazon<br></br> 
-            Become an Affiliate Fulfilment by Amazon<br></br>  Advertise Your Products<br></br> 
+            Become an Affiliate Fulfillment by Amazon<br></br>  Advertise Your Products<br></br> 
             Amazon Pay on Merchants.<br></br> 
           </p>
         </div>
