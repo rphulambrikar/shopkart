@@ -46,7 +46,7 @@ const Login = () => {
 
             <div class="links">
                 <button>Forgot your password?</button>
-                <button onClick={() => navigate("/signup")}>Create your Amazon account</button>
+                <button onClick={() => navigate("/signup")}>Create your Shopkart account</button>
             </div>
         </form>
     </div>

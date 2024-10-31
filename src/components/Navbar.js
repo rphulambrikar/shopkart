@@ -32,7 +32,9 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="logo">
-        <img src='https://www.hatchwise.com/wp-content/uploads/2022/05/amazon-logo-1024x683.png' alt='Amazon' />
+        {/* <img src='https://www.hatchwise.com/wp-content/uploads/2022/05/amazon-logo-1024x683.png' alt='Amazon' />
+       */}
+       <h4>Shopkart</h4>
       </div>
       <button className="navbarToggle" onClick={handleToggleMenu}>
         {menuOpen ? 'Close Menu' : 'Menu'}
